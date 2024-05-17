@@ -1,6 +1,10 @@
 #include "pch.h"
+#include "../StringSimilarity/StringSimilarity.cpp"
 
-TEST(StringSimilarityTest, TestName) {
-  EXPECT_EQ(1, 1);
-  EXPECT_TRUE(true);
+TEST(StringSimilarityTest, StringsWithSameLength) {
+	StringSimilarity stringSmilarity{};
+	string right = "abcdefghijk";
+	string left = "kjihgfedcba";
+	
+	EXPECT_EQ(60, stringSmilarity.getScore(left, right));
 }
